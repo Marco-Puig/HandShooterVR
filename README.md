@@ -1,6 +1,9 @@
 # HandShooterVR
 A Action VR Game that uses Hand Gestures as Controls.
 
+## Current Iteration
+Prototyping Phase
+
 ## Basic Movement
 
 https://github.com/Marco-Puig/HandShooterVR/assets/90495366/683d662a-3f44-4f67-bd97-dafedeb6ed1b
