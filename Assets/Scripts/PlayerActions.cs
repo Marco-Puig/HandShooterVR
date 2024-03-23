@@ -6,10 +6,43 @@ using UnityEngine.XR;
 
 public class PlayerActions : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] Transform playerTransform;
+    [Header("Left Hand")]
     [SerializeField] Transform leftHandTransform;
+    [Header("Right Hand")]
+    [SerializeField] GameObject modelShow;
+    [Header("Both Hands")]
     [SerializeField] Material handMaterial;
 
+    // Current HandStates
+    private delegate void HandState();
+    private HandState rightHandState;
+    private HandState leftHandState;
+
+    // Set States in Event Handler
+    private string _leftHandStateName;
+    private string _rightHandStateName;
+    public string rightHandStateName
+    {
+        get => _rightHandStateName;
+        set
+        {
+            _rightHandStateName = value;
+            HandleStates();
+        }
+    }
+    public string leftHandStateName
+    {
+        get => _leftHandStateName;
+        set
+        {
+            _leftHandStateName = value;
+            HandleStates();
+        }
+    }
+
+    // Cooldown
     private float count = 0f;
     private bool cooldown = false;
     private const float maxCount = 300f;
@@ -29,12 +62,14 @@ public class PlayerActions : MonoBehaviour
     private void Update()
     {
         HandleCooldown();
+        rightHandState?.Invoke();
+        leftHandState?.Invoke();
     }
 
     /// <summary>
     /// Moves the player in the direction of the left hand transform.
     /// </summary>
-    public void MoveDirectionPoint()
+    void MoveDirectionPoint()
     {
         // += Vector3(x, y, z);
         playerTransform.position += leftHandTransform.forward * 3.0f * Time.deltaTime;
@@ -43,19 +78,26 @@ public class PlayerActions : MonoBehaviour
     /// <summary>
     /// Fires the action if the cooldown is not active.
     /// </summary>
-    public void Firing()
+    private void Firing()
     {
         if (!cooldown)
         {
             handMaterial.color = new Color(1f, 1f, 1f, 0f);
             count += 1f;
+            modelShow.SetActive(true);
+        }
+        else
+        {
+            handMaterial.color = Color.red;
+            modelShow.SetActive(false);
         }
     }
 
-    public void StopFiring()
+    private void StopFiring()
     {
         handMaterial.color = new Color(1f, 1f, 1f, 1f);
-        count -= 1f;   
+        count -= 1f;
+        modelShow.SetActive(false);
     }
 
     /// <summary>
@@ -70,7 +112,6 @@ public class PlayerActions : MonoBehaviour
 
         if (count != 0f && cooldown)
         {
-            handMaterial.color = Color.red;
             count -= 1f;
         }
 
@@ -80,4 +121,31 @@ public class PlayerActions : MonoBehaviour
             cooldown = false;
         }
     }
+
+    private void HandleStates()
+    {
+        switch (rightHandStateName)
+        {
+            case "Firing":
+                rightHandState = Firing;
+                break;
+            case "StopFiring":
+                rightHandState = StopFiring;
+                break;
+            default:
+                rightHandState = null;
+                break;
+        }
+
+        switch (leftHandStateName)
+        {
+            case "MoveDirectionPoint":
+                leftHandState = MoveDirectionPoint;
+                break;
+            default:
+                leftHandState = null;
+                break;
+        }
+    }
 }
+

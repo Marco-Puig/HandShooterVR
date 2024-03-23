@@ -56,14 +56,24 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\DynamicMoveProvider.cs" />
-    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\PokeStation\IncrementUIText.cs" />
-    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\ActionBasedControllerManager.cs" />
-    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\GazeInputManager.cs" />
-    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\XRPokeFollowAffordance.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\ObjectSpawner.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\DemoSceneAssets\Scripts\MultiAnchorTeleportReticle.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\GazeInputManager.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\DemoSceneAssets\Scripts\IncrementUIText.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\ControllerAnimator.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\MaterialPipelineHandler.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\DemoSceneAssets\Scripts\TeleportVolumeAnchorAffordanceStateLink.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\ClimbTeleportDestinationIndicator.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\ControllerInputActionManager.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\DestroySelf.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\DynamicMoveProvider.cs" />
+    <Compile Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Scripts\XRPokeFollowAffordance.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef" />
+    <None Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Shaders\BiRP_Fresnel.shader" />
+    <None Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef" />
+    <None Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Tunneling Vignette\TunnelingVignette.shader" />
+    <None Include="Assets\Samples\XR Interaction Toolkit\3.0.1\Starter Assets\Shaders\UI-NoZTest.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -729,14 +739,14 @@
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.CoreUtils">
       <HintPath>Library\ScriptAssemblies\Unity.XR.CoreUtils.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Interaction.Toolkit">
       <HintPath>Library\ScriptAssemblies\Unity.XR.Interaction.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>

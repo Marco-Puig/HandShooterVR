@@ -57,7 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Old\VRGestureSystem.cs" />
+    <Compile Include="Assets\VR\Samples\XR Hands\1.2.1\HandVisualizer\Scripts\HandProcessor.cs" />
+    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\DynamicMoveProvider.cs" />
+    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\PokeStation\IncrementUIText.cs" />
+    <Compile Include="Assets\VR\Samples\XR Hands\1.2.1\HandVisualizer\Scripts\HandVisualizer.cs" />
     <Compile Include="Assets\Scripts\PlayerActions.cs" />
+    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\ActionBasedControllerManager.cs" />
+    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\GazeInputManager.cs" />
+    <Compile Include="Assets\VR\Samples\XR Interaction Toolkit\2.3.2\Starter Assets\Scripts\XRPokeFollowAffordance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -816,6 +823,9 @@
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InputSystem.ForUI">
+      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.OpenXR.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
     </Reference>
@@ -852,23 +862,26 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.InputSystem.ForUI">
-      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Searcher.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
-      <Project>{A6BF574B-ADEE-F8E6-1090-64DF70EEB127}</Project>
-      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj">
-      <Project>{031F5445-545B-F8F3-AE42-43F493CDB02D}</Project>
-      <Name>Unity.XR.Hands.Samples.VisualizerSample</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.XR.Hands.Samples.Gestures.csproj">
-      <Project>{093E1A4F-BCDE-DD16-B597-87807ECD4E83}</Project>
-      <Name>Unity.XR.Hands.Samples.Gestures</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.csproj">
       <Project>{DED39B42-EC87-BD97-E917-72F184E8FA9D}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.Hands</Name>
@@ -876,6 +889,22 @@
     <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj">
       <Project>{ADA00C97-46CB-3C02-7DD7-86CF6896185D}</Project>
       <Name>Unity.XR.Interaction.Toolkit.Samples.Hands.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Hands.Samples.Gestures.csproj">
+      <Project>{093E1A4F-BCDE-DD16-B597-87807ECD4E83}</Project>
+      <Name>Unity.XR.Hands.Samples.Gestures</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Hands.Samples.VisualizerSample.csproj">
+      <Project>{031F5445-545B-F8F3-AE42-43F493CDB02D}</Project>
+      <Name>Unity.XR.Hands.Samples.VisualizerSample</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.csproj">
+      <Project>{A6BF574B-ADEE-F8E6-1090-64DF70EEB127}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.csproj">
+      <Project>{06E27D0A-9646-F1BB-C4A0-7CF2C3F6C580}</Project>
+      <Name>Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

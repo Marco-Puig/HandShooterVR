@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &154447532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9187805529397234164, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+  m_PrefabInstance: {fileID: 1673297459936988522}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &200631092
 GameObject:
   m_ObjectHideFlags: 0
@@ -5146,27 +5151,15 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 896157246}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
-        m_MethodName: Firing
-        m_Mode: 1
+        m_MethodName: set_rightHandStateName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Firing
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 561916723}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
   m_GestureEnded:
     m_PersistentCalls:
@@ -5183,16 +5176,16 @@ MonoBehaviour:
           m_StringArgument: '[No Gestures]'
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 561916723}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 896157246}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: set_rightHandStateName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: StopFiring
           m_BoolArgument: 0
         m_CallState: 2
   m_MinimumHoldTime: 0.2
@@ -5214,7 +5207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &561916724
 Transform:
   m_ObjectHideFlags: 0
@@ -5593,14 +5586,14 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 896157246}
         m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
-        m_MethodName: MoveDirectionPoint
-        m_Mode: 1
+        m_MethodName: set_leftHandStateName
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MoveDirectionPoint
           m_BoolArgument: 0
         m_CallState: 2
   m_GestureEnded:
@@ -5616,6 +5609,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: '[No Gestures]'
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 896157246}
+        m_TargetAssemblyTypeName: PlayerActions, Assembly-CSharp
+        m_MethodName: set_leftHandStateName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: default
           m_BoolArgument: 0
         m_CallState: 2
   m_MinimumHoldTime: 0.2
@@ -10725,9 +10730,13 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1673297460127189844, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+      propertyPath: modelShow
+      value: 
+      objectReference: {fileID: 561916723}
+    - target: {fileID: 1673297460127189844, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
       propertyPath: leftHandTransform
       value: 
-      objectReference: {fileID: 1431487973}
+      objectReference: {fileID: 154447532}
     - target: {fileID: 1926963905307730097, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
       propertyPath: m_SystemGestureEnded.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -10763,6 +10772,22 @@ PrefabInstance:
     - target: {fileID: 9187805529792418451, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
       propertyPath: m_PokeGestureStarted.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187805530333375303, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187805530333375303, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999636
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187805530333375303, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.0027186368
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187805530333375303, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -0.312
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a2bb85a102e79b498374c8466f68d10, type: 3}
